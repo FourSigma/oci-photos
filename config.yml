@@ -1,0 +1,28 @@
+version: 0.1
+log:
+  level: debug
+storage:
+  filesystem:
+    rootdirectory: /var/lib/registry
+http:
+  addr: 0.0.0.0:5000
+  secret: asecretforlocaldevelopment
+  debug:
+    addr: localhost:5001
+notifications:
+  endpoints:
+    - name: siva
+      url: http://app:8888/notifications
+      headers:
+        Content-Type:
+          - "application/json"
+      timeout: 30s 
+      threshold: 5
+      backoff: 1s
+      ignoredmediatypes:
+        - application/octet-stream
+      ignore:
+        mediaType:
+          - application/octet-stream
+        actions:
+          - pull

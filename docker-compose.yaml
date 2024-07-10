@@ -1,0 +1,17 @@
+version: "3.8"
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 0.0.0.0:8888:8888
+    volumes:
+      - ./:/app
+  registry:
+    image: registry:2
+    ports:
+      - 0.0.0.0:8080:5000
+    volumes:
+      - ./cache:/var/lib/registry
+      - ./config.yml:/etc/docker/registry/config.yml
