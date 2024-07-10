@@ -23,5 +23,6 @@ go.work.sum
 
 
 .cache
+*.swp
 cache
 tmp
