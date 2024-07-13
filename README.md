@@ -1,4 +1,4 @@
-# oci-photos
+# oci-photos - GopherCon 2024
 
 GopherCon 2024 Talk 
 
